@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffffff00;
 }
 
 /* Menu no topo */
@@ -32,8 +32,8 @@ body {
 .top-menu ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    padding: 10px 15px;
+    font-size: 13px;
+    padding: 5px 5px;
 }
 
 .top-menu ul li a:hover {
@@ -43,7 +43,7 @@ body {
 
 /* Compensar o espaço do menu fixo */
 body {
-    margin-top: 60px; /* Compensa o menu fixo no topo */
+    margin-top: 40px; /* Compensa o menu fixo no topo */
 }
 
 /* Player de áudio */
@@ -51,7 +51,7 @@ body {
     text-align: center;
     padding: 20px;
     background-color: #f7f7ec;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .player-section h2 {
@@ -78,9 +78,9 @@ body {
 /* Linha entre os banners */
 hr {
     border: 0;
-    height: 2px;
-    background-color: #000;
-    margin: 0;
+    height: 3px;
+    background-color: #e6d3b3;
+    margin: 6;
 }
 
 /* Seção "Sobre" */
@@ -121,4 +121,63 @@ footer .socials img {
 /* Rolagem suave */
 html {
     scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
+}
+
+.banner {
+    position: relative; /* Define o banner como referência para o posicionamento dos botões */
+    width: 100%; /* Ajusta para 100% da largura do contêiner pai */
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.cta-btn {
+    position: absolute; /* Faz o botão invisível ficar posicionado sobre a imagem */
+    background-color: rgba(255, 255, 255, 0); /* Botão invisível */
+    /* background-color: rgb(0, 0, 0); Botão visível */
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo de hover opcional para dar um feedback visual */
+.cta-btn:hover {
+    background-color: rgba(88, 10, 10, 0.2); /* Transparência visível ao passar o mouse */
+}
+
+/* Estilo de posicionamento para cada botão */
+.ensaio-geral {
+    top: 65%;
+    left: 40%;
+    width: 20%;
+    height: 10%;
+}
+
+.show-ao-vivo {
+    top: 55%;
+    left: 70%;
+    width: 20%;
+    height: 10%;
+}
+
+.remix-autoral {
+    top: 55%;
+    left: 10%;
+    width: 20%;
+    height: 10%;
+}
+
+.show-participacao {
+    top: 82%;
+    left: 70%;
+    width: 20%;
+    height: 10%;
+}
+
+.video-clipe {
+    top: 82%;
+    left: 10%;
+    width: 20%;
+    height: 10%;
 }
