@@ -3,25 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Victorino - DJ Set Rever Ocaso</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </head>
-<body>
-    <!-- Banner de fundo com texto e botões sobrepostos -->
+<body id="home">
+
+    <!-- Menu no topo -->
+    <nav class="top-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="live-performance.html" target="_blank">Live Performance</a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=5551999561111&text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" target="_blank">Orçamento/Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Player de áudio com mensagem -->
+    <div class="player-section">
+        <h2>Ouça um gostinho do SetList</h2>
+        <audio id="audio-player" controls>
+            <source src="audio/reel.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <!-- Banner 1 -->
     <div class="banner">
         <img src="images/banner-image.png" alt="Banner DJ Set Rever Ocaso">
-        
-        </div>
     </div>
+    <hr>
+
+    <!-- Banner 2 -->
+    <div class="banner">
+        <img src="images/3.png" alt="Banner Apresentação">
+    </div>
+    <hr>
+
+    <!-- Banner 3 -->
+    <div class="banner">
+        <img src="images/4.png" alt="Banner o que é rever ocaso">
+    </div>
+    <hr>
 
     <!-- Seção "Sobre" como imagem de fundo sem texto adicional -->
     <div class="sobre">
         <img src="images/about-section.png" alt="Sobre Victorino">
     </div>
 
+    <!-- Seção "contato" como imagem de fundo sem texto adicional -->
+    <div class="sobre">
+        <img src="images/7.png" alt="Sobre Victorino">
+    </div>
     <!-- Footer com ícones de redes sociais -->
-    <footer>
+    <footer id="contato">
         <p>&copy; 2024 Victorino. Todos os direitos reservados.</p>
         <div class="socials">
             <a href="https://www.instagram.com/victorinomusica" target="_blank">
@@ -32,5 +66,9 @@
             </a>
         </div>
     </footer>
+
+    <!-- JavaScript para controlar o player -->
+    <script src="script.js"></script>
+
 </body>
 </html>

@@ -6,6 +6,64 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Menu no topo */
+.top-menu {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed; /* Menu fixo no topo da página */
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.top-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.top-menu ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.top-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+.top-menu ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Compensar o espaço do menu fixo */
+body {
+    margin-top: 60px; /* Compensa o menu fixo no topo */
+}
+
+/* Player de áudio */
+.player-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f7ec;
+    margin-bottom: 20px;
+}
+
+.player-section h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.player-section audio {
+    width: 100%;
+    max-width: 300px;
+}
+
 /* Estilo para a imagem de banner */
 .banner {
     position: relative;
@@ -17,15 +75,15 @@ body {
     height: auto;
 }
 
-.banner .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
+/* Linha entre os banners */
+hr {
+    border: 0;
+    height: 2px;
+    background-color: #000;
+    margin: 0;
 }
 
+/* Seção "Sobre" */
 .sobre {
     position: relative;
     width: 100%;
@@ -36,17 +94,7 @@ body {
     height: auto;
 }
 
-.sobre .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-}
-
-
-/* Social icons in the footer */
+/* Footer e ícones sociais */
 footer {
     text-align: center;
     background-color: #333;
@@ -68,4 +116,9 @@ footer .socials a {
 
 footer .socials img {
     width: 30px;
+}
+
+/* Rolagem suave */
+html {
+    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
 }
