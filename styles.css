@@ -1,0 +1,71 @@
+/* Estilos para o corpo da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Estilo para a imagem de banner */
+.banner {
+    position: relative;
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.sobre {
+    position: relative;
+    width: 100%;
+}
+
+.sobre img {
+    width: 100%;
+    height: auto;
+}
+
+.sobre .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+
+/* Social icons in the footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+footer .socials {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+footer .socials a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+footer .socials img {
+    width: 30px;
+}
