@@ -33,14 +33,10 @@ body {
 }
 
 
-
-
-
 /* Menu no topo */
-
 .top-menu {
-    background-color: #333;
-    padding: 10px 0;
+    background-color: #ac4718; /* Cor de fundo do menu */
+    padding: 9px 0;
     text-align: center;
     position: fixed;
     width: 100%;
@@ -48,20 +44,22 @@ body {
     z-index: 100;
 }
 
+/* Lista do menu com flexbox para centralizar e alinhar */
 .top-menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: flex; /* Ajustado para flex para centralizar e espaçar os itens */
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Espaçamento entre os itens do menu */
+    gap: 8px; /* Espaçamento entre os itens do menu */
 }
 
 .top-menu ul li {
     display: inline;
 }
 
+/* Links do menu */
 .top-menu ul li a {
     color: white;
     text-decoration: none;
@@ -69,48 +67,15 @@ body {
     padding: 5px 10px;
 }
 
-/* Estilo para os ícones no menu */
+/* Cor e hover dos ícones */
 .top-menu .iconify {
-    color: white; /* Cor dos ícones no menu */
-    vertical-align: middle; /* Alinhamento vertical com o texto */
-}
-
-.top-menu ul li a:hover {
-    background-color: #ffda48;
-    border-radius: 5px;
-}
-
-.top-menu {
-    background-color: #ac4718;
-    padding: 10px 0;
-    text-align: center;
-    position: fixed; /* Menu fixo no topo da página */
-    width: 100%;
-    top: 0;
-    z-index: 100;
-}
-
-.top-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-}
-
-.top-menu ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-.top-menu ul li a {
     color: white;
-    text-decoration: none;
-    font-size: 15px;
-    padding: 5px 5px;
+    vertical-align: middle;
 }
 
+/* Estilo de hover para os links */
 .top-menu ul li a:hover {
-    background-color: #555;
+    background-color: #e8c74384;
     border-radius: 5px;
 }
 
