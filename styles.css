@@ -6,9 +6,82 @@ body {
     background-color: #ffffff00;
 }
 
+
+
+/* Estilos para o contêiner do WhatsApp */
+
+
+.whatsapp-contact {
+    position: absolute;
+    top: 390px; /* Ajuste a posição vertical */
+    right: 1050px; /* Ajuste a posição horizontal */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o número */
+  
+}
+
+/* Estilo para o link do número de telefone */
+.whatsapp-contact a {
+    color: #25D366; /* Cor verde típica do WhatsApp */
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.whatsapp-contact .iconify {
+    color: #25D366; /* Cor do ícone */
+}
+
+
+
+
+
 /* Menu no topo */
+
 .top-menu {
     background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.top-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre os itens do menu */
+}
+
+.top-menu ul li {
+    display: inline;
+}
+
+.top-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 5px 10px;
+}
+
+/* Estilo para os ícones no menu */
+.top-menu .iconify {
+    color: white; /* Cor dos ícones no menu */
+    vertical-align: middle; /* Alinhamento vertical com o texto */
+}
+
+.top-menu ul li a:hover {
+    background-color: #ffda48;
+    border-radius: 5px;
+}
+
+.top-menu {
+    background-color: #ac4718;
     padding: 10px 0;
     text-align: center;
     position: fixed; /* Menu fixo no topo da página */
@@ -32,7 +105,7 @@ body {
 .top-menu ul li a {
     color: white;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
     padding: 5px 5px;
 }
 
@@ -64,6 +137,9 @@ body {
     max-width: 300px;
 }
 
+
+
+
 /* Estilo para a imagem de banner */
 .banner {
     position: relative;
@@ -78,7 +154,7 @@ body {
 /* Linha entre os banners */
 hr {
     border: 0;
-    height: 3px;
+    height: 10px;
     background-color: #e6d3b3;
     margin: 6;
 }
@@ -97,7 +173,7 @@ hr {
 /* Footer e ícones sociais */
 footer {
     text-align: center;
-    background-color: #333;
+    background-color: #333333;
     color: white;
     padding: 20px 0;
 }
@@ -180,4 +256,86 @@ html {
     left: 10%;
     width: 20%;
     height: 10%;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Remove margens desnecessárias em telas menores 
+    .player-section, .banner, .sobre, footer {
+        margin-bottom: 0;
+        padding-bottom: 10;
+    } */
+
+}
+
+/* Estilos para telas menores que 768px */
+@media (max-width: 768px) {
+    .player-section {
+        padding: 15px; /* Ajuste o padding para telas menores */
+        background-color: #f7f7ec; /* Opção para mudar a cor de fundo no mobile */
+    }
+
+    .player-section h2 {
+        font-size: 15px; /* Reduz o tamanho da fonte do título */
+    }
+
+    .player-section audio {
+        width: 80%; /* Ocupa 90% da largura para melhor encaixe no mobile */
+    }
+
+    /* Controles personalizados */
+    .custom-controls {
+        flex-direction: column; /* Coloca os controles em uma coluna no mobile */
+        align-items: center;
+    }
+
+    .btn-play,
+    #seek-bar,
+    #volumeBar {
+        width: 50%; /* Ajusta os botões e sliders para ocupar toda a largura */
+        max-width: 100px; /* Limita a largura máxima */
+        margin-bottom: 10px; /* Espaço entre os elementos */
+    }
+
+     /* Remover o rótulo "Volume" e o controle deslizante de volume no celular */
+     label[for="volumeBar"],
+     #volumeBar {
+         display: none; /* Esconde o rótulo "Volume" e o fader */
+     }
+}
+
+/* Ajuste de posição para dispositivos móveis */
+@media (max-width: 768px) {
+    .whatsapp-contact {
+        top: 115px; /* Ajuste a posição vertical */
+        right: 310px; /* Ajuste a posição horizontal */
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Espaço entre o ícone e o número */
+    }
+
+   
+}
+
+/* Imagem para Desktop */
+.banner-mobile {
+    display: none; /* Oculta a imagem mobile por padrão */
+}
+
+.banner-desktop {
+    display: block; /* Exibe a imagem desktop por padrão */
+}
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+    .banner-desktop {
+        display: none; /* Oculta a imagem desktop em telas menores */
+    }
+    .banner-mobile {
+        display: block; /* Exibe a imagem mobile em telas menores */
+    }
 }
