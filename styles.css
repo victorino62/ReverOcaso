@@ -176,7 +176,7 @@ html {
 
 .cta-btn {
     position: absolute; /* Faz o botão invisível ficar posicionado sobre a imagem */
-    background-color: rgba(255, 255, 255, 0); /* Botão invisível */
+    background-color: rgba(239, 21, 21, 0); /* Botão invisível */
     /* background-color: rgb(0, 0, 0); Botão visível */
     border: none;
     cursor: pointer;
@@ -197,30 +197,68 @@ html {
 
 .show-ao-vivo {
     top: 55%;
-    left: 70%;
+    left: 65%;
     width: 20%;
     height: 10%;
 }
 
 .remix-autoral {
     top: 55%;
-    left: 10%;
+    left: 15%;
     width: 20%;
     height: 10%;
 }
 
 .show-participacao {
     top: 82%;
-    left: 70%;
+    left: 65%;
     width: 20%;
     height: 10%;
 }
 
 .video-clipe {
     top: 82%;
-    left: 10%;
+    left: 15%;
     width: 20%;
     height: 10%;
+}
+
+/* Ajuste dos botões para dispositivos móveis */
+@media (max-width: 768px) {
+    .ensaio-geral {
+        top: 55%;
+        left: 12%;
+        width: 35%;
+        height: 10%;
+    }
+    
+    .show-ao-vivo {
+        top: 65%;
+        left: 60%;
+        width: 30%;
+        height: 10%;
+    }
+    
+    .remix-autoral {
+        top: 25%;
+        left: 11%;
+        width: 30%;
+        height: 10%;
+    }
+    
+    .show-participacao {
+        top: 90%;
+        left: 35%;
+        width: 35%;
+        height: 10%;
+    }
+    
+    .video-clipe {
+        top: 37%;
+        left: 55%;
+        width: 30%;
+        height: 10%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -302,5 +340,11 @@ html {
     }
     .banner-mobile {
         display: block; /* Exibe a imagem mobile em telas menores */
+    }
+}
+/* Adiciona espaçamento superior na seção do player em telas pequenas */
+@media (max-width: 768px) {
+    .player-section {
+        padding-top: 60px; /* Ajuste conforme a altura do menu */
     }
 }
