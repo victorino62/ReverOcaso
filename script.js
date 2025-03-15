@@ -47,6 +47,20 @@ window.onload = function() {
     seekBar.oninput = () => {
         audio.currentTime = seekBar.value;
     };
+   
+   
+  // Código para aplicar o efeito de shake no ícone do WhatsApp
+  setInterval(function() {
+    var icon = document.getElementById("whatsapp-icon");
+    if (icon) {
+      icon.classList.add("shake");
 
-     
+      setTimeout(function() {
+        icon.classList.remove("shake");
+      }, 500);
+    }
+  }, 10000);
 };
+     
+
+  

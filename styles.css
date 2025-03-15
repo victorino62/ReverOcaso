@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #ffffff00;
+    background-color: #f5e4d4;
 }
 
 
@@ -11,26 +11,31 @@ body {
 /* Estilos para o contêiner do WhatsApp */
 
 
-.whatsapp-contact {
-    position: absolute;
-    top: 390px; /* Ajuste a posição vertical */
-    right: 1050px; /* Ajuste a posição horizontal */
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Espaço entre o ícone e o número */
+/* Posicionamento fixo no canto inferior direito */
+#whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/733/733585.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 9999; /* para garantir que fique na frente de outros elementos */
+  }
   
-}
-
-/* Estilo para o link do número de telefone */
-.whatsapp-contact a {
-    color: #25D366; /* Cor verde típica do WhatsApp */
-    font-size: 16px;
-    text-decoration: none;
-}
-
-.whatsapp-contact .iconify {
-    color: #25D366; /* Cor do ícone */
-}
+  /* Classe que controla o “tremor” via animação de keyframes */
+  .shake {
+    animation: shake-animation 0.5s ease-in-out;
+  }
+  
+  /* Keyframes para o efeito de tremor */
+  @keyframes shake-animation {
+    0%, 100%   { transform: translateX(0); }
+    20%, 60%   { transform: translateX(-5px); }
+    40%, 80%   { transform: translateX(5px); }
+  }
 
 
 /* Menu no topo */
@@ -138,8 +143,8 @@ hr {
 /* Footer e ícones sociais */
 footer {
     text-align: center;
-    background-color: #333333;
-    color: white;
+    background-color: #f9d59d;
+    color: rgb(82, 8, 8);
     padding: 20px 0;
 }
 
@@ -151,7 +156,7 @@ footer .socials {
 
 footer .socials a {
     margin: 0 10px;
-    color: white;
+    color: rgb(77, 0, 0);
     text-decoration: none;
 }
 
