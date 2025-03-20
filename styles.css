@@ -329,10 +329,20 @@ html {
    
 }
 
-/* Imagem para Desktop */
+/* Imagem para Desktop 
 .banner-mobile {
-    display: none; /* Oculta a imagem mobile por padrão */
+    display: none; /* Oculta a imagem mobile por padrão 
 }
+    */
+
+.banner-mobile {
+    display: none;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    image-rendering: optimizeQuality;
+}
+
 
 .banner-desktop {
     display: block; /* Exibe a imagem desktop por padrão */
@@ -344,12 +354,16 @@ html {
         display: none; /* Oculta a imagem desktop em telas menores */
     }
     .banner-mobile {
-        display: block; /* Exibe a imagem mobile em telas menores */
+    display: block; /* Exibe a imagem mobile em telas menores */    
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    image-rendering: optimizeQuality;
     }
 }
 /* Adiciona espaçamento superior na seção do player em telas pequenas */
 @media (max-width: 768px) {
     .player-section {
-        padding-top: 60px; /* Ajuste conforme a altura do menu */
+        padding-top: 30px; /* Ajuste conforme a altura do menu */
     }
 }
