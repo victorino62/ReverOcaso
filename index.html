@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victorino - Rever Ocaso / Eletro & Voz</title>
+    <title>Victorino - Live Performer</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </head>
@@ -33,7 +33,88 @@
         </ul>
     </nav>
 
-    <div id="home" class="player-section">
+   
+
+    <!-- Banner 1 Home - nome-->
+    <div class="banner">
+
+        <div class="carousel">
+            <img id="carousel-image" alt="Banner Carrossel" class="banner-desktop">
+        </div>
+    <script>
+    const carouselImages = [
+        'images/capa_carrossel_1.svg',
+        'images/capa_carrossel_2.svg'
+        // Adicione aqui os nomes dos novos arquivos de imagem
+    ];
+    let currentIndex = 0;
+    const carouselImg = document.getElementById('carousel-image');
+    // Defina o src inicial imediatamente
+    carouselImg.src = carouselImages[currentIndex];
+    carouselImg.style.opacity = 1;
+
+    function fadeOut(element, duration, callback) {
+        let opacity = 1;
+        const interval = 50;
+        const gap = interval / duration;
+        function fade() {
+            opacity -= gap;
+            if (opacity <= 0) {
+                opacity = 0;
+                element.style.opacity = opacity;
+                if (callback) callback();
+            } else {
+                element.style.opacity = opacity;
+                setTimeout(fade, interval);
+            }
+        }
+        fade();
+    }
+
+    function fadeIn(element, duration) {
+        let opacity = 0;
+        const interval = 50;
+        const gap = interval / duration;
+        function fade() {
+            opacity += gap;
+            if (opacity >= 1) {
+                opacity = 1;
+                element.style.opacity = opacity;
+            } else {
+                element.style.opacity = opacity;
+                setTimeout(fade, interval);
+            }
+        }
+        fade();
+    }
+
+    function changeImageWithFade(nextIndex) {
+        fadeOut(carouselImg, 400, () => {
+            carouselImg.src = carouselImages[nextIndex];
+            fadeIn(carouselImg, 400);
+        });
+    }
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % carouselImages.length;
+        changeImageWithFade(currentIndex);
+    }, 3000);
+    </script>
+       
+<!-- Banner retirado
+        
+        <img src="images/capa_2025_V3.svg" alt="Banner DJ Set Rever Ocaso" class="banner-desktop">
+        
+        <img src="images/capa_mobile_V5.png" alt="Banner Mobile" class="banner-mobile">
+
+         -->
+</div>
+    </div>
+    <hr>
+   
+
+
+ <div id="home" class="player-section">
         <h2>Ouça um gostinho do repertório</h2>
         <audio id="audio-player">
             <source src="audio/reel_2.mp3" type="audio/mp3">
@@ -56,28 +137,10 @@
         </div>
     </div>
 
-    <!-- Player de áudio com mensagem
-    <div class="player-section">
-        <h2>Ouça um gostinho do SetList</h2>
-        <audio id="audio-player" controls>
-            <source src="audio/reel.mp3" type="audio/mp3">
-            Seu navegador não suporta o elemento de áudio.
-        </audio>
-    </div>
-     -->
-
-    <!-- Banner 1 Home - nome-->
-    <div class="banner">
-       
-        <img src="images/capa_2025_V3.svg" alt="Banner DJ Set Rever Ocaso" class="banner-desktop">
-        <!-- Imagem para mobile -->
-        <img src="images/capa_mobile_V5.png" alt="Banner Mobile" class="banner-mobile">
-</div>
-    </div>
-    <hr>
-    <div class="pf__portfolio__video">
+     <div class="pf__portfolio__video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/9AAEFqep7oI?si=yo1NE079N1zr0eBZ" frameborder="0" allowfullscreen></iframe>
       </div>
+
     <!-- Banner 2 Resumo Geral -->
     <div class="banner">
         <img src="images/apresenta_V2.svg" alt="Banner Apresentação" class="banner-desktop">
