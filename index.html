@@ -38,20 +38,28 @@
     <!-- Banner 1 Home - nome-->
     <div class="banner">
 
-        <div class="carousel">
-            <img id="carousel-image" alt="Banner Carrossel" class="banner-desktop">
-        </div>
+       <div class="carousel">
+    <img id="carousel-image" alt="Banner Carrossel" class="banner-desktop">
+    <img id="carousel-image-mobile" alt="Banner Carrossel Mobile" class="banner-mobile">
+</div>
     <script>
     const carouselImages = [
         'images/capa_carrossel_1.svg',
         'images/capa_carrossel_2.svg'
-        // Adicione aqui os nomes dos novos arquivos de imagem
+    ];
+    const carouselImagesMobile = [
+        'images/capa_carrossel_mobile_1.svg',
+        'images/capa_carrossel_mobile_2.svg' // Adicione mais imagens se quiser
     ];
     let currentIndex = 0;
     const carouselImg = document.getElementById('carousel-image');
-    // Defina o src inicial imediatamente
+    const carouselImgMobile = document.getElementById('carousel-image-mobile');
+
+    // Inicializa ambos
     carouselImg.src = carouselImages[currentIndex];
     carouselImg.style.opacity = 1;
+    carouselImgMobile.src = carouselImagesMobile[currentIndex];
+    carouselImgMobile.style.opacity = 1;
 
     function fadeOut(element, duration, callback) {
         let opacity = 1;
@@ -92,6 +100,10 @@
         fadeOut(carouselImg, 400, () => {
             carouselImg.src = carouselImages[nextIndex];
             fadeIn(carouselImg, 400);
+        });
+        fadeOut(carouselImgMobile, 400, () => {
+            carouselImgMobile.src = carouselImagesMobile[nextIndex];
+            fadeIn(carouselImgMobile, 400);
         });
     }
 
