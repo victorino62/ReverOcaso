@@ -4,6 +4,8 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f5e4d4;
+    width: 100vw;
+    overflow-x: hidden; 
 }
 
 
@@ -337,30 +339,46 @@ html {
 
 .banner-mobile {
     display: none;
-    width: 100%;
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
     height: auto;
-    max-width: 100%;
+    border: none;
+    box-sizing: border-box;
     image-rendering: optimizeQuality;
+    background: #f5e4d4; /* MESMA cor do body/background */
 }
-
-
-.banner-desktop {
-    display: block; /* Exibe a imagem desktop por padrão */
-}
-
-/* Media query para dispositivos móveis */
 @media (max-width: 768px) {
     .banner-desktop {
-        display: none; /* Oculta a imagem desktop em telas menores */
+        display: none;
     }
     .banner-mobile {
-    display: block; /* Exibe a imagem mobile em telas menores */    
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    image-rendering: optimizeQuality;
+        display: block;
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+        margin: 0;
+        padding: 0;
+        height: auto;
+        border: none;
+        box-sizing: border-box;
+        image-rendering: optimizeQuality;
+        background: #f5e4d4; /* MESMA cor do body/background */
     }
 }
+
+@media (max-width: 768px) {
+  .banner-mobile {
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(-1 * (100vw - 100%) / 2);
+    margin-right: calc(-1 * (100vw - 100%) / 2);
+  }
+}
+
 /* Adiciona espaçamento superior na seção do player em telas pequenas */
 @media (max-width: 768px) {
     .player-section {
@@ -375,7 +393,7 @@ html {
     height: 0;
     overflow: hidden;
     max-width: 100%;
-    height: 300px; /* Adjust this value to control the video's height */
+    height: 550px; /* Adjust this value to control the video's height */
     padding-bottom: 0; /* Remove the default responsive aspect ratio */
     margin: 0 auto;
   }
@@ -396,3 +414,123 @@ html {
     height: 100%;
     border: 0;
   }
+
+
+
+
+
+  /* PLAYER MODERNO */
+.player-section {
+  text-align: center;
+  padding: 32px 18px 28px 18px;
+  background: #f7f7ec;
+  margin-bottom: 10px;
+  border-radius: 1.4rem;
+  box-shadow: 0 6px 22px 0 rgba(100,80,40,0.11);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.player-section h2 {
+  margin-bottom: 18px;
+  color: #392100;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.audio-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-play {
+  background: #ac4718;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.35rem;
+  transition: background 0.2s;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #ad67211a;
+}
+.btn-play:hover {
+  background: #c08038;
+}
+
+/* Barra de progresso */
+#seek-bar {
+  flex: 1;
+  min-width: 85px;
+  max-width: 160px;
+  accent-color: #ac4718;
+  margin: 0 4px;
+  height: 4px;
+  border-radius: 10px;
+}
+
+/* Tempo */
+#current-time, #duration {
+  font-size: 0.99rem;
+  color: #653600;
+  min-width: 36px;
+  text-align: right;
+  opacity: 0.9;
+}
+
+/* Volume */
+#volumeBar {
+  width: 65px;
+  accent-color: #c09055;
+  margin-left: 10px;
+  margin-right: 0;
+  vertical-align: middle;
+}
+
+label[for="volumeBar"] {
+  font-size: 0.95rem;
+  color: #997531;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+/* Esconde o player nativo */
+.player-section audio {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+}
+
+/* Mobile First */
+@media (max-width: 768px) {
+  .player-section {
+    padding: 18px 6px 20px 6px;
+    border-radius: 1rem;
+    max-width: 99vw;
+  }
+  .player-section h2 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+}
