@@ -1,66 +1,92 @@
 window.onload = function() {
-    const audio = document.getElementById("audio-player");
-    const playPauseBtn = document.getElementById("play-pause");
-    const seekBar = document.getElementById("seek-bar");
-    const currentTimeEl = document.getElementById("current-time");
-    const durationEl = document.getElementById("duration");
+    
 
-    let isPlaying = false;
-
-      // Controle de volume
-      volumeBar.oninput = () => {
-        audio.volume = volumeBar.value;
-    };
-
-    // Função para formatar o tempo em minutos e segundos
-    function formatTime(seconds) {
-        const min = Math.floor(seconds / 60);
-        const sec = Math.floor(seconds % 60);
-        return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-    }
-
-    // Atualizar a duração total do áudio
-    audio.onloadedmetadata = () => {
-        durationEl.textContent = formatTime(audio.duration);
-        seekBar.max = audio.duration;
-    };
-
-    // Atualizar a barra de progresso e o tempo atual
-    audio.ontimeupdate = () => {
-        seekBar.value = audio.currentTime;
-        currentTimeEl.textContent = formatTime(audio.currentTime);
-    };
-
-    // Controle de Play/Pause
-    playPauseBtn.onclick = () => {
-        if (isPlaying) {
-            audio.pause();
-            playPauseBtn.textContent = "Play";
-        } else {
-            audio.play();
-            playPauseBtn.textContent = "Pause";
+    // --- EFEITO SHAKE NO WHATSAPP ---
+    setInterval(function() {
+        var icon = document.getElementById("whatsapp-icon");
+        if (icon) {
+            icon.classList.add("shake");
+            setTimeout(function() {
+                icon.classList.remove("shake");
+            }, 500);
         }
-        isPlaying = !isPlaying;
-    };
+    }, 10000);
 
-    // Atualizar a posição do áudio ao usar a barra de progresso
-    seekBar.oninput = () => {
-        audio.currentTime = seekBar.value;
-    };
-   
-   
-  // Código para aplicar o efeito de shake no ícone do WhatsApp
-  setInterval(function() {
-    var icon = document.getElementById("whatsapp-icon");
-    if (icon) {
-      icon.classList.add("shake");
+    // --- CARROSSEL DE BANNERS ---
+    const carouselImages = [
+        'images/capa_carrossel_2.svg',
+        'images/capa_carrossel_1.svg'
+    ];
+    const carouselImagesMobile = [
+        'images/capa_carrossel_mobile_1.png',
+        'images/capa_carrossel_mobile_2.png'
+    ];
+    let currentIndex = 0;
+    const carouselImg = document.getElementById('carousel-image');
+    const carouselImgMobile = document.getElementById('carousel-image-mobile');
 
-      setTimeout(function() {
-        icon.classList.remove("shake");
-      }, 500);
+    // Pré-carrega imagens
+    carouselImages.concat(carouselImagesMobile).forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+
+    // Garante que carrossel só roda se existem imagens e elementos
+    if (carouselImg && carouselImgMobile) {
+        carouselImg.src = carouselImages[currentIndex];
+        carouselImg.style.opacity = 1;
+        carouselImgMobile.src = carouselImagesMobile[currentIndex];
+        carouselImgMobile.style.opacity = 1;
+
+        function fadeOut(element, duration, callback) {
+            let opacity = 1;
+            const interval = 50;
+            const gap = interval / duration;
+            function fade() {
+                opacity -= gap;
+                if (opacity <= 0) {
+                    opacity = 0;
+                    element.style.opacity = opacity;
+                    if (callback) callback();
+                } else {
+                    element.style.opacity = opacity;
+                    setTimeout(fade, interval);
+                }
+            }
+            fade();
+        }
+
+        function fadeIn(element, duration) {
+            let opacity = 0;
+            const interval = 50;
+            const gap = interval / duration;
+            function fade() {
+                opacity += gap;
+                if (opacity >= 1) {
+                    opacity = 1;
+                    element.style.opacity = opacity;
+                } else {
+                    element.style.opacity = opacity;
+                    setTimeout(fade, interval);
+                }
+            }
+            fade();
+        }
+
+        function changeImageWithFade(nextIndex) {
+            fadeOut(carouselImg, 400, () => {
+                carouselImg.src = carouselImages[nextIndex];
+                fadeIn(carouselImg, 400);
+            });
+            fadeOut(carouselImgMobile, 400, () => {
+                carouselImgMobile.src = carouselImagesMobile[nextIndex];
+                fadeIn(carouselImgMobile, 400);
+            });
+        }
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % carouselImages.length;
+            changeImageWithFade(currentIndex);
+        }, 6000);
     }
-  }, 10000);
 };
-     
-
-  

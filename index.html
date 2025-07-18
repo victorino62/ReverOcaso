@@ -7,265 +7,95 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link rel="canonical" href="https://victorinomusica.com.br/">
-
 </head>
 <body>
 
     <!-- Menu no topo -->
     <nav class="top-menu">
         <ul>
-        <li><a href="#home">Home</a></li>
-        <!--  <li><a href="#eletro-voz" target="_blank">Eletro & Voz</a></li>  -->
-        <li><a href="#videos">Ouça/Veja</a></li>  
-        <li><a href="https://api.whatsapp.com/send?phone=5551999561111&text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" target="_blank">Orçamento</a></li>
-            
-         <!-- Ícones de redes sociais no menu -->
-         <li>
-            <a href="https://www.instagram.com/victorinomusica" target="_blank">
-                <span class="iconify" data-icon="mdi:instagram" data-width="24" data-height="24"></span>
-            </a>
-        </li>
-        <li>
-        <!--     <a href="https://youtube.com/user/musicavictorino" target="_blank">
-                <span class="iconify" data-icon="mdi:youtube" data-width="24" data-height="24"></span>   -->
-            </a>
-        </li>
-
-
+            <li><a href="#home">Home</a></li>
+            <!-- <li><a href="#eletro-voz" target="_blank">Eletro & Voz</a></li> 
+            <li><a href="#videos">Ouça/Veja</a></li> -->
+            <li><a href="https://api.whatsapp.com/send?phone=5551999561111&text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento" target="_blank">Orçamento</a></li>
+            <li>
+                <a href="https://www.instagram.com/victorinomusica" target="_blank">
+                    <span class="iconify" data-icon="mdi:instagram" data-width="24" data-height="24"></span>
+                </a>
+            </li>
+            <li>
+                <!-- <a href="https://youtube.com/user/musicavictorino" target="_blank">
+                    <span class="iconify" data-icon="mdi:youtube" data-width="24" data-height="24"></span>
+                </a> -->
+            </li>
         </ul>
     </nav>
 
+    <!-- Banner 1 Home - Carrossel -->
+    <div class="banner">
+        <div class="carousel">
+            <img id="carousel-image" alt="Banner Carrossel" class="banner-desktop">
+            <img id="carousel-image-mobile" alt="Banner Carrossel Mobile" class="banner-mobile">
+        </div>
+    </div>
+    <hr>
+
+    <!-- Banner 2 Resumo Geral -->
+    <div class="banner">
+        <img id="home" src="images/formatos.svg" alt="Banner Apresentação" class="banner-desktop">
+        <img id="home" src="images/formatos_mobile.png" alt="Banner Mobile" class="banner-mobile">
+    </div>
+    <hr>
+
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/40ZoEPWO3wqt1J53EjDXzN?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
    
-
-    <!-- Banner 1 Home - nome-->
-    <div class="banner">
-
-       <div class="carousel">
-    <img id="carousel-image" alt="Banner Carrossel" class="banner-desktop">
-    <img id="carousel-image-mobile" alt="Banner Carrossel Mobile" class="banner-mobile">
-</div>
-    <script>
-    const carouselImages = [
-        'images/capa_carrossel_2.svg',
-        'images/capa_carrossel_1.svg'
-    ];
-    const carouselImagesMobile = [
-        'images/capa_carrossel_mobile_1.png',
-        'images/capa_carrossel_mobile_2.png' // Adicione mais imagens se quiser
-    ];
-    let currentIndex = 0;
-    const carouselImg = document.getElementById('carousel-image');
-    const carouselImgMobile = document.getElementById('carousel-image-mobile');
-
-    // Inicializa ambos
-    carouselImg.src = carouselImages[currentIndex];
-    carouselImg.style.opacity = 1;
-    carouselImgMobile.src = carouselImagesMobile[currentIndex];
-    carouselImgMobile.style.opacity = 1;
-
-    function fadeOut(element, duration, callback) {
-        let opacity = 1;
-        const interval = 50;
-        const gap = interval / duration;
-        function fade() {
-            opacity -= gap;
-            if (opacity <= 0) {
-                opacity = 0;
-                element.style.opacity = opacity;
-                if (callback) callback();
-            } else {
-                element.style.opacity = opacity;
-                setTimeout(fade, interval);
-            }
-        }
-        fade();
-    }
-
-    function fadeIn(element, duration) {
-        let opacity = 0;
-        const interval = 50;
-        const gap = interval / duration;
-        function fade() {
-            opacity += gap;
-            if (opacity >= 1) {
-                opacity = 1;
-                element.style.opacity = opacity;
-            } else {
-                element.style.opacity = opacity;
-                setTimeout(fade, interval);
-            }
-        }
-        fade();
-    }
-
-    function changeImageWithFade(nextIndex) {
-        fadeOut(carouselImg, 400, () => {
-            carouselImg.src = carouselImages[nextIndex];
-            fadeIn(carouselImg, 400);
-        });
-        fadeOut(carouselImgMobile, 400, () => {
-            carouselImgMobile.src = carouselImagesMobile[nextIndex];
-            fadeIn(carouselImgMobile, 400);
-        });
-    }
-
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % carouselImages.length;
-        changeImageWithFade(currentIndex);
-    }, 6000);
-    </script>
-       
-<!-- Banner retirado
-        
-        <img src="images/capa_2025_V3.svg" alt="Banner DJ Set Rever Ocaso" class="banner-desktop">
-        
-        <img src="images/capa_mobile_V5.png" alt="Banner Mobile" class="banner-mobile">
-
-         -->
-</div>
-    </div>
-    <hr>
-<!--
-   
-<div id="home" class="player-section">
-  <h2>Ouça um gostinho do repertório</h2>
-  <div class="audio-player">
-    <audio id="audio-player">
-      <source src="audio/reel_2.mp3" type="audio/mp3">
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
-    <div class="controls">
-      <button id="play-pause" class="btn">
-        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z" fill="currentColor"/>
-        </svg>
-        <svg id="pause-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24">
-          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor"/>
-        </svg>
-      </button>
-      <input type="range" id="seek-bar" value="0" min="0" max="100">
-      <span id="current-time">0:00</span> / <span id="duration">0:00</span>
-      <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
-    </div>
-  </div>
-</div>
-
-
--->
-
-  <!-- Banner 2 Resumo Geral -->
-    <div class="banner">
-        <img src="images/apresenta_V2.svg" alt="Banner Apresentação" class="banner-desktop">
-             <!-- Imagem para mobile -->
-            <img src="images/apresenta_mobile_2025.svg" alt="Banner Mobile" class="banner-mobile">
-    </div>
-    <hr>
-
-    <div id="home" class="player-section">
-  <h2>Ouça um gostinho do repertório</h2>
-  <div class="audio-player">
-    <audio id="audio-player">
-      <source src="audio/reel_2.mp3" type="audio/mp3">
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
-    <div class="controls">
-      <button id="play-pause" class="btn">
-        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z" fill="currentColor"/>
-        </svg>
-        <svg id="pause-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24">
-          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor"/>
-        </svg>
-      </button>
-      <input type="range" id="seek-bar" value="0" min="0" max="100">
-      <span id="current-time">0:00</span> / <span id="duration">0:00</span>
-      <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
-    </div>
-  </div>
-</div>
-
-
-     <div class="pf__portfolio__video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/bGm2f75m2i0?si=gRXpzZQPr_mmyfzg" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-   
-
-    <!-- Banner 3 Eletro e Voz -->
-    <div class="banner">
-        <img src="images/eletro&voz_v2.svg" alt="Banner o que é rever ocaso" class="banner-desktop">
-             <!-- Imagem para mobile -->
-             <img src="images/3 mobile.svg" alt="Banner Mobile" class="banner-mobile">
-    </div>
-    <hr>
-
-    <!-- Banner 4 o que é Rever OCaso -->
-    <div class="banner">
-        <img src="images/4.svg" alt="Banner o que é rever ocaso" class="banner-desktop">
-             <!-- Imagem para mobile -->
-             <img src="images/4 mobile.svg" alt="Banner Mobile" class="banner-mobile">
-    </div>
-    <hr>
-     <!-- Banner 5  Projetos / videos-->
-    <div id="videos" class="banner">
-        <img src="images/videos_v2.svg" alt="Live Performance Banner 4" class="banner-desktop">
-        <img src="images/videos.svg" alt="Banner Mobile" class="banner-mobile">
-
-    <!-- Botão invisível para Ensaio Geral -->
-    <a href="https://www.instagram.com/reel/CnprttROJbD/?igsh=dWMyMm1ob2Jia3dk" target="_blank" class="cta-btn ensaio-geral"></a>
-
-    <!-- Botão invisível para Show Ao Vivo -->
-    <a href="https://youtu.be/c8mL6sbhfsU?si=Yz3UIHkBOSkdrZDm" target="_blank" class="cta-btn show-ao-vivo"></a>
-
-    <!-- Botão invisível para Remix Autoral -->
-    <a href="https://open.spotify.com/intl-pt/track/0fIskODgxLM143xtMRZqiO?si=68f895c8819349cf" target="_blank" class="cta-btn remix-autoral"></a>
-
-    <!-- Botão invisível para Show com Participação -->
-    <a href="https://youtu.be/p1dtcRrams0?si=zY3vqHZInadIieJC" target="_blank" class="cta-btn show-participacao"></a>
-
-    <!-- Botão invisível para Video Clipe -->
-    <a href="https://youtu.be/LKn_F1TxsIg?si=eBypZtHzNOUr5Wsr" target="_blank" class="cta-btn video-clipe"></a>
-</div>
-
-
-
-
-
-
-
-
-    <!-- Seção "Sobre" como imagem de fundo sem texto adicional -->
-    <div class="sobre">
-        <img src="images/carreira.svg" alt="Sobre Victorino" class="banner-desktop">
-             <!-- Imagem para mobile -->
-            <img src="images/4 mobile (2).svg" alt="Banner Mobile" class="banner-mobile">
-    </div>
-
-
-   <!-- Banner tipos de eventos -->
+         <!-- Banner tipos de eventos -->
     <div class="banner">
         <img src="images/eventos.svg" alt="Banner o que é rever ocaso" class="banner-desktop">
-             <!-- Imagem para mobile -->
-             <img src="images/eventos_mobiles.png" alt="Banner Mobile" class="banner-mobile">
+        <img src="images/eventos_mobiles.png" alt="Banner Mobile" class="banner-mobile">
+    </div>
+
+ 
+  
+
+   
+
+
+
+
+
+        <!-- Botões invisíveis para ações dos vídeos -->
+        <a href="https://www.instagram.com/reel/CnprttROJbD/?igsh=dWMyMm1ob2Jia3dk" target="_blank" class="cta-btn ensaio-geral"></a>
+        <a href="https://youtu.be/c8mL6sbhfsU?si=Yz3UIHkBOSkdrZDm" target="_blank" class="cta-btn show-ao-vivo"></a>
+        <a href="https://open.spotify.com/intl-pt/track/0fIskODgxLM143xtMRZqiO?si=68f895c8819349cf" target="_blank" class="cta-btn remix-autoral"></a>
+        <a href="https://youtu.be/p1dtcRrams0?si=zY3vqHZInadIieJC" target="_blank" class="cta-btn show-participacao"></a>
+        <a href="https://youtu.be/LKn_F1TxsIg?si=eBypZtHzNOUr5Wsr" target="_blank" class="cta-btn video-clipe"></a>
+    </div>
+
+    <!-- Seção "Sobre" -->
+    <div class="sobre">
+        <img src="images/carreira.svg" alt="Sobre Victorino" class="banner-desktop">
+        <img src="images/4 mobile (2).svg" alt="Banner Mobile" class="banner-mobile">
+    </div>
+
+           <!-- Vídeo YouTube -->
+    <div class="pf__portfolio__video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bGm2f75m2i0?si=gRXpzZQPr_mmyfzg" frameborder="0" allowfullscreen></iframe>
     </div>
 
 
 
-    <!-- Seção "contato" como imagem de fundo sem texto adicional -->
+    <!-- Seção "contato" -->
     <div class="sobre">
         <img src="images/5.svg" alt="Sobre Victorino" class="banner-desktop">
-            <!-- Imagem para mobile -->
-             <img src="images/5 mobile.svg" alt="Banner Mobile" class="banner-mobile">
-                     
+        <img src="images/5 mobile.svg" alt="Banner Mobile" class="banner-mobile">
     </div>
 
-    <!-- Seção para o ícone do WhatsApp -->
-<a id="whatsapp-icon" href="https://api.whatsapp.com/send?phone=5551999561111&text=Olá!"
-target="_blank" rel="noopener noreferrer" title="Fale conosco no WhatsApp">
-</a>
 
 
-    
+    <!-- Ícone WhatsApp fixo -->
+    <a id="whatsapp-icon" href="https://api.whatsapp.com/send?phone=5551999561111&text=Olá!"
+    target="_blank" rel="noopener noreferrer" title="Fale conosco no WhatsApp"></a>
+
     <!-- Footer com ícones de redes sociais -->
     <footer id="contato">
         <p>&copy; 2025 Victorino. Todos os direitos reservados.</p>
@@ -279,8 +109,7 @@ target="_blank" rel="noopener noreferrer" title="Fale conosco no WhatsApp">
         </div>
     </footer>
 
-    <!-- JavaScript para controlar o player -->
-    <script src="script.js"></script>
-
+    <!-- JS centralizado -->
+    <script src="script.js" defer></script>
 </body>
 </html>
